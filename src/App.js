@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import "./App.css";
+const head1 = ["Mobile operating system"];
+const head2 = ["Mobile Manufactures"];
+const data = ["Android", "blackberry", "iphone", "window phone"];
+const company = ["Samsung", "HTC", "Micromax", "Apple"];
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>
+          <ul>
+            {head1.map((e) => {
+              return <li>{e}</li>;
+            })}
+
+            <h6>
+              {data.map((e) => {
+                return <li>{e}</li>;
+              })}
+            </h6>
+          </ul>
+        </h1>
+
+        <h1>
+          <ul>
+            {head2.map((e) => {
+              return <li>{e}</li>;
+            })}
+
+            <h6>
+              {company.map((e) => {
+                return <li>{e}</li>;
+              })}
+            </h6>
+          </ul>
+        </h1>
+      </div>
     </div>
   );
 }
-
-export default App;
