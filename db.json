@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "username": "gkjkk",
+      "Age": "24",
+      "Mobile": "99835435445",
+      "id": 1
+    },
+    {
+      "username": "prakriti",
+      "Age": "24",
+      "Mobile": "9935376565",
+      "id": 2
+    },
+    {
+      "username": "AYUSHI",
+      "Age": "27",
+      "Mobile": "4834837889",
+      "id": 3
+    },
+    {
+      "username": "satendra",
+      "Age": "34",
+      "Mobile": "8978798797",
+      "id": 4
+    },
+    {
+      "username": "satendra",
+      "Age": "34",
+      "Mobile": "8978798797",
+      "id": 5
+    },
+    {
+      "username": "kuamrar",
+      "Age": "34",
+      "Mobile": "8978798797",
+      "id": 6
+    }
+  ]
+}

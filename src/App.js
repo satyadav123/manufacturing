@@ -1,40 +1,44 @@
 import "./App.css";
-const head1 = ["Mobile operating system"];
-const head2 = ["Mobile Manufactures"];
-const data = ["Android", "blackberry", "iphone", "window phone"];
-const company = ["Samsung", "HTC", "Micromax", "Apple"];
+import {useState} from "react";
 export default function App() {
+  const [set,updateset]=useState({
+    username:"",
+    Age:"",
+    Mobile:""
+  });
+  var InputHandler=((e)=>{
+    const {id,value}=e.target;
+  updateset({
+    ...set,
+    [id]:value,
+  })
+  console.log(set)
+
+  })
+  let handleSubmit=((e)=>{
+    e.preventDefault();
+    //e.preventDefault()
+  // console.log(set)
+    fetch("http://localhost:8080/data",{
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(set)
+    })
+})
+ 
+
+
   return (
     <div className="App">
-      <div>
-        <h1>
-          <ul>
-            {head1.map((e) => {
-              return <li>{e}</li>;
-            })}
-
-            <h6>
-              {data.map((e) => {
-                return <li>{e}</li>;
-              })}
-            </h6>
-          </ul>
-        </h1>
-
-        <h1>
-          <ul>
-            {head2.map((e) => {
-              return <li>{e}</li>;
-            })}
-
-            <h6>
-              {company.map((e) => {
-                return <li>{e}</li>;
-              })}
-            </h6>
-          </ul>
-        </h1>
-      </div>
+    <form onSubmit={handleSubmit}>
+<input onChange={InputHandler} id="username"type="text" placeholder="Enter Name"/><br/><br/>
+<input onChange={InputHandler} id="Age"  type="text" placeholder="Enter Age"/><br/><br/>
+<input onChange={InputHandler} id="Mobile" type="text" placeholder="Enter Mobile Number"/><br/><br/>
+<input type="Submit"/>
+    </form>
+    
     </div>
   );
 }
